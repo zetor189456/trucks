@@ -1,0 +1,24 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "driver",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "registration",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180712112435",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "truck",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pager"
+}

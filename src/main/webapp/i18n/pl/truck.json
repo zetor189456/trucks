@@ -1,0 +1,23 @@
+{
+    "trucksApp": {
+        "truck" : {
+            "home": {
+                "title": "Trucks",
+                "createLabel": "Dodaj Truck",
+                "createOrEditLabel": "Dodaj lub edytuj: Truck"
+            },
+            "created": "Utworzono nowy Truck z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono Truck z identyfikatorem {{ param }}",
+            "deleted": "Usunięto Truck z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Truck {{ id }}?"
+            },
+            "detail": {
+                "title": "Truck"
+            },
+            "driver": "Driver",
+            "registration": "Registration",
+            "type": "Type"
+        }
+    }
+}

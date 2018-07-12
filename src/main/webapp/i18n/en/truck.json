@@ -1,0 +1,23 @@
+{
+    "trucksApp": {
+        "truck" : {
+            "home": {
+                "title": "Trucks",
+                "createLabel": "Create a new Truck",
+                "createOrEditLabel": "Create or edit a Truck"
+            },
+            "created": "A new Truck is created with identifier {{ param }}",
+            "updated": "A Truck is updated with identifier {{ param }}",
+            "deleted": "A Truck is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Truck {{ id }}?"
+            },
+            "detail": {
+                "title": "Truck"
+            },
+            "driver": "Driver",
+            "registration": "Registration",
+            "type": "Type"
+        }
+    }
+}
