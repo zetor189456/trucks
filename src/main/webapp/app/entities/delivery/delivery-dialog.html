@@ -1,0 +1,110 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDeliveryLabel" data-translate="trucksApp.delivery.home.createOrEditLabel">Create or edit a Delivery</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.delivery.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.delivery.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.dateAdded" for="field_dateAdded">Date Added</label>
+                <div class="input-group">
+                    <input id="field_dateAdded" type="text" class="form-control" name="dateAdded" uib-datepicker-popup="{{dateformat}}" ng-model="vm.delivery.dateAdded" is-open="vm.datePickerOpenStatus.dateAdded"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateAdded')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.size" for="field_size">Size</label>
+            <input type="number" class="form-control" name="size" id="field_size"
+                    ng-model="vm.delivery.size"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.weight" for="field_weight">Weight</label>
+            <input type="number" class="form-control" name="weight" id="field_weight"
+                    ng-model="vm.delivery.weight"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.pickupLocation" for="field_pickupLocation">Pickup Location</label>
+            <input type="text" class="form-control" name="pickupLocation" id="field_pickupLocation"
+                    ng-model="vm.delivery.pickupLocation"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.deliveryLocation" for="field_deliveryLocation">Delivery Location</label>
+            <input type="text" class="form-control" name="deliveryLocation" id="field_deliveryLocation"
+                    ng-model="vm.delivery.deliveryLocation"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.pickupDescription" for="field_pickupDescription">Pickup Description</label>
+            <input type="text" class="form-control" name="pickupDescription" id="field_pickupDescription"
+                    ng-model="vm.delivery.pickupDescription"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.deliveryDescription" for="field_deliveryDescription">Delivery Description</label>
+            <input type="text" class="form-control" name="deliveryDescription" id="field_deliveryDescription"
+                    ng-model="vm.delivery.deliveryDescription"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.status" for="field_status">Status</label>
+            <input type="text" class="form-control" name="status" id="field_status"
+                    ng-model="vm.delivery.status"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.expectedIncome" for="field_expectedIncome">Expected Income</label>
+            <input type="number" class="form-control" name="expectedIncome" id="field_expectedIncome"
+                    ng-model="vm.delivery.expectedIncome"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.pickupDate" for="field_pickupDate">Pickup Date</label>
+                <div class="input-group">
+                    <input id="field_pickupDate" type="text" class="form-control" name="pickupDate" datetime-picker="{{dateformat}}" ng-model="vm.delivery.pickupDate" is-open="vm.datePickerOpenStatus.pickupDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('pickupDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="trucksApp.delivery.deliveryDate" for="field_deliveryDate">Delivery Date</label>
+                <div class="input-group">
+                    <input id="field_deliveryDate" type="text" class="form-control" name="deliveryDate" datetime-picker="{{dateformat}}" ng-model="vm.delivery.deliveryDate" is-open="vm.datePickerOpenStatus.deliveryDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('deliveryDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="trucksApp.delivery.truck" for="field_truck">Truck</label>
+            <select class="form-control" id="field_truck" name="truck" ng-model="vm.delivery.truck" ng-options="truck as truck.driver for truck in vm.trucks track by truck.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,32 @@
+{
+    "trucksApp": {
+        "delivery" : {
+            "home": {
+                "title": "Deliveries",
+                "createLabel": "Dodaj Delivery",
+                "createOrEditLabel": "Dodaj lub edytuj: Delivery"
+            },
+            "created": "Utworzono nowy Delivery z identyfikatorem {{ param }}",
+            "updated": "Uaktualniono Delivery z identyfikatorem {{ param }}",
+            "deleted": "Usunięto Delivery z identyfikatorem {{ param }}",
+            "delete": {
+                "question": "Czy na pewno chcesz usunąć Delivery {{ id }}?"
+            },
+            "detail": {
+                "title": "Delivery"
+            },
+            "dateAdded": "Date Added",
+            "size": "Size",
+            "weight": "Weight",
+            "pickupLocation": "Pickup Location",
+            "deliveryLocation": "Delivery Location",
+            "pickupDescription": "Pickup Description",
+            "deliveryDescription": "Delivery Description",
+            "status": "Status",
+            "expectedIncome": "Expected Income",
+            "pickupDate": "Pickup Date",
+            "deliveryDate": "Delivery Date",
+            "truck": "Truck"
+        }
+    }
+}

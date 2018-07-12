@@ -1,0 +1,63 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "truck",
+            "otherEntityName": "truck",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "driver"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dateAdded",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "pickupLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryLocation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pickupDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deliveryDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "expectedIncome",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "pickupDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "deliveryDate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20180712115235",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "delivery",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pager"
+}
