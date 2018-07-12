@@ -1,6 +1,7 @@
 
 <div>
     <h2><span data-translate="trucksApp.truck.detail.title">Truck</span> {{vm.truck.id}}</h2>
+
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
@@ -17,6 +18,116 @@
             <span>{{vm.truck.type}}</span>
         </dd>
     </dl>
+    <button class="btn btn-primary" onclick="alert('raport do zrobienia')" >
+        <span class="glyphicon glyphicon-list"></span>
+        <span  >
+                        Generate Report
+                    </span>
+    </button>
+<hr/>
+
+    <h2>Route (GPS data) and plan</h2>
+    <img class="logo-img" src="content/images/mapa2.png" alt="logo"/>
+    <h2>Deliveries</h2>
+
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="size"><span >Size</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="weight"><span >Weight</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="pickupLocation"><span >Pickup Location</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="deliveryLocation"><span >Delivery Location</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="status"><span >Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="expectedIncome"><span >Expected Income</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="pickupDate"><span >Pickup Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="delivery in vm.deliveries track by delivery.id">
+                <td><a ui-sref="delivery-detail({id:delivery.id})">{{delivery.id}}</a></td>
+                <td>{{delivery.size}}</td>
+                <td>{{delivery.weight}}</td>
+                <td>{{delivery.pickupLocation}}</td>
+                <td>{{delivery.deliveryLocation}}</td>
+                <td>{{delivery.status}}</td>
+                <td>{{delivery.expectedIncome}}</td>
+                <td>{{delivery.pickupDate | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <!--<button type="submit"-->
+                                <!--ui-sref="delivery-detail({id:delivery.id})"-->
+                                <!--class="btn btn-info btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                            <!--<span class="hidden-sm-down" data-translate="entity.action.view"></span>-->
+                        <!--</button>-->
+                        <button type="submit"
+                                ui-sref="delivery.edit({id:delivery.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                        </button>
+                        <!--<button type="submit"-->
+                                <!--ui-sref="delivery.delete({id:delivery.id})"-->
+                                <!--class="btn btn-danger btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                            <!--<span class="hidden-sm-down" data-translate="entity.action.delete"></span>-->
+                        <!--</button>-->
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr/>
+<h2>Costs</h2>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+            <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="location"><span >Location</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="time"><span >Time</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="amount"><span >Amount</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="type"><span >Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="cost in vm.costs track by cost.id">
+                <td><a ui-sref="cost-detail({id:cost.id})">{{cost.id}}</a></td>
+                <td>{{cost.location}}</td>
+                <td>{{cost.time | date:'medium'}}</td>
+                <td>{{cost.amount}}</td>
+                <td>{{cost.type}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <!--<button type="submit"-->
+                                <!--ui-sref="cost-detail({id:cost.id})"-->
+                                <!--class="btn btn-info btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-eye-open"></span>-->
+                            <!--<span class="hidden-sm-down" data-translate="entity.action.view"></span>-->
+                        <!--</button>-->
+                        <button type="submit"
+                                ui-sref="cost.edit({id:cost.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                        </button>
+                        <!--<button type="submit"-->
+                                <!--ui-sref="cost.delete({id:cost.id})"-->
+                                <!--class="btn btn-danger btn-sm">-->
+                            <!--<span class="glyphicon glyphicon-remove-circle"></span>-->
+                            <!--<span class="hidden-sm-down" data-translate="entity.action.delete"></span>-->
+                        <!--</button>-->
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
     <button type="submit"
             ui-sref="{{ vm.previousState }}"

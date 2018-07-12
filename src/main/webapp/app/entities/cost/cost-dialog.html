@@ -8,11 +8,6 @@
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.cost.id">
-            <label for="id" data-translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.cost.id" readonly />
-        </div>
         <div class="form-group">
             <label class="control-label" data-translate="trucksApp.cost.location" for="field_location">Location</label>
             <input type="text" class="form-control" name="location" id="field_location"
@@ -37,9 +32,15 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="trucksApp.cost.type" for="field_type">Type</label>
-            <input type="text" class="form-control" name="type" id="field_type"
-                    ng-model="vm.cost.type"
-                    />
+            <select class="form-control" id="field_type" name="truck" ng-model="vm.cost.type" >
+                <option value="Paliwo">Paliwo</option>
+                <option value="Dniówka">Dniówka</option>
+                <option value="Parking">Parking</option>
+                <option value="Nocleg">Nocleg</option>
+                <option value="Opłata drogowa">Opłata drogowa</option>
+                <option value="Inne">Inne</option>
+            </select>
+
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="trucksApp.cost.description" for="field_description">Description</label>

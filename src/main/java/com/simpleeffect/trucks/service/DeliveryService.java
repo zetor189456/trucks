@@ -9,6 +9,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 
 /**
  * Service Implementation for managing Delivery.
@@ -32,6 +35,9 @@ public class DeliveryService {
      * @return the persisted entity
      */
     public Delivery save(Delivery delivery) {
+        if (delivery.getDateAdded() == null) {
+            delivery.setDateAdded(LocalDate.now());
+        }
         log.debug("Request to save Delivery : {}", delivery);
         return deliveryRepository.save(delivery);
     }

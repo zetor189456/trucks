@@ -8,29 +8,29 @@
     </div>
     <div class="modal-body">
         <jhi-alert-error></jhi-alert-error>
-        <div class="form-group" ng-show="vm.delivery.id">
-            <label for="id" data-translate="global.field.id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="vm.delivery.id" readonly />
-        </div>
+        <!--<div class="form-group" ng-show="vm.delivery.id">-->
+            <!--<label for="id" data-translate="global.field.id">ID</label>-->
+            <!--<input type="text" class="form-control" id="id" name="id"-->
+                    <!--ng-model="vm.delivery.id" readonly />-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" data-translate="trucksApp.delivery.dateAdded" for="field_dateAdded">Date Added</label>-->
+                <!--<div class="input-group">-->
+                    <!--<input id="field_dateAdded" type="text" class="form-control" name="dateAdded" uib-datepicker-popup="{{dateformat}}" ng-model="vm.delivery.dateAdded" is-open="vm.datePickerOpenStatus.dateAdded"-->
+                    <!--/>-->
+                    <!--<span class="input-group-btn">-->
+                        <!--<button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateAdded')"><i class="glyphicon glyphicon-calendar"></i></button>-->
+                    <!--</span>-->
+                <!--</div>-->
+        <!--</div>-->
         <div class="form-group">
-            <label class="control-label" data-translate="trucksApp.delivery.dateAdded" for="field_dateAdded">Date Added</label>
-                <div class="input-group">
-                    <input id="field_dateAdded" type="text" class="form-control" name="dateAdded" uib-datepicker-popup="{{dateformat}}" ng-model="vm.delivery.dateAdded" is-open="vm.datePickerOpenStatus.dateAdded"
-                    />
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateAdded')"><i class="glyphicon glyphicon-calendar"></i></button>
-                    </span>
-                </div>
-        </div>
-        <div class="form-group">
-            <label class="control-label" data-translate="trucksApp.delivery.size" for="field_size">Size</label>
+            <label class="control-label" for="field_size">Liczba palet</label>
             <input type="number" class="form-control" name="size" id="field_size"
                     ng-model="vm.delivery.size"
                     />
         </div>
         <div class="form-group">
-            <label class="control-label" data-translate="trucksApp.delivery.weight" for="field_weight">Weight</label>
+            <label class="control-label" data-translate="trucksApp.delivery.weight" for="field_weight">Liczba ton</label>
             <input type="number" class="form-control" name="weight" id="field_weight"
                     ng-model="vm.delivery.weight"
                     />
@@ -61,9 +61,13 @@
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="trucksApp.delivery.status" for="field_status">Status</label>
-            <input type="text" class="form-control" name="status" id="field_status"
-                    ng-model="vm.delivery.status"
-                    />
+            <select class="form-control" id="field_status" name="truck" ng-model="vm.delivery.status" >
+                <option value="Nowe">Nowe</option>
+                <option value="Przyjęte">Przyjęte</option>
+                <option value="W transporcie">W transporcie</option>
+                <option value="Dostarczone">Dostarczone</option>
+                <option value="Anulowane">Anulowane</option>
+            </select>
         </div>
         <div class="form-group">
             <label class="control-label" data-translate="trucksApp.delivery.expectedIncome" for="field_expectedIncome">Expected Income</label>
