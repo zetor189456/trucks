@@ -1,0 +1,26 @@
+{
+    "trucksApp": {
+        "cost" : {
+            "home": {
+                "title": "Costs",
+                "createLabel": "Create a new Cost",
+                "createOrEditLabel": "Create or edit a Cost"
+            },
+            "created": "A new Cost is created with identifier {{ param }}",
+            "updated": "A Cost is updated with identifier {{ param }}",
+            "deleted": "A Cost is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Cost {{ id }}?"
+            },
+            "detail": {
+                "title": "Cost"
+            },
+            "location": "Location",
+            "time": "Time",
+            "amount": "Amount",
+            "type": "Type",
+            "description": "Description",
+            "truck": "Truck"
+        }
+    }
+}

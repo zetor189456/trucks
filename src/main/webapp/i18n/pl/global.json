@@ -9,6 +9,7 @@
                 "main": "Encje",
                 "truck": "Truck",
                 "delivery": "Delivery",
+                "cost": "Cost",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

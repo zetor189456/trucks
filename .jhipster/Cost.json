@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "truck",
+            "otherEntityName": "truck",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "driver"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "location",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180712115525",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "cost",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pager"
+}

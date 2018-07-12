@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="trucksApp.cost.detail.title">Cost</span> {{vm.cost.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="trucksApp.cost.location">Location</span></dt>
+        <dd>
+            <span>{{vm.cost.location}}</span>
+        </dd>
+        <dt><span data-translate="trucksApp.cost.time">Time</span></dt>
+        <dd>
+            <span>{{vm.cost.time | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="trucksApp.cost.amount">Amount</span></dt>
+        <dd>
+            <span>{{vm.cost.amount}}</span>
+        </dd>
+        <dt><span data-translate="trucksApp.cost.type">Type</span></dt>
+        <dd>
+            <span>{{vm.cost.type}}</span>
+        </dd>
+        <dt><span data-translate="trucksApp.cost.description">Description</span></dt>
+        <dd>
+            <span>{{vm.cost.description}}</span>
+        </dd>
+        <dt><span data-translate="trucksApp.cost.truck">Truck</span></dt>
+        <dd>
+            <a ui-sref="truck-detail({id:vm.cost.truck.id})">{{vm.cost.truck.driver}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="cost-detail.edit({id:vm.cost.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
